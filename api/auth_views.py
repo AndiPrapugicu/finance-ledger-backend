@@ -16,20 +16,34 @@ from .auth_serializers import (
 from .temp_models import Account, Transaction
 from .pagination import StandardResultsSetPagination
 
+from django.views.decorators.csrf import csrf_exempt
+
+
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
+@csrf_exempt
 def register_view(request):
-    """User registration endpoint"""
-    serializer = UserRegistrationSerializer(data=request.data)
-    if serializer.is_valid():
-        user = serializer.save()
-        token, created = Token.objects.get_or_create(user=user)
+    """User registration endpoint with debug-safe error reporting"""
+    try:
+        serializer = UserRegistrationSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({
+                'token': token.key,
+                'user': UserProfileSerializer(user).data,
+                'message': 'Registration successful'
+            }, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as e:
+        # Log traceback on server and return JSON error for easier debugging in deployed env
+        tb = traceback.format_exc()
+        print(f"[ERROR register_view] {str(e)}")
+        print(tb)
         return Response({
-            'token': token.key,
-            'user': UserProfileSerializer(user).data,
-            'message': 'Registration successful'
-        }, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            'error': str(e),
+            'traceback': tb
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['POST'])
