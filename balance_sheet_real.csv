@@ -1,0 +1,15 @@
+Account Type,Account Name,Balance
+ASSETS,,
+,Checking Account,1946.0
+,Savings Account,-100.0
+,Cash,277.0
+,Digital Wallet,1795.0
+,Opening Balance,-633.0
+Total Assets,,3285.0
+
+LIABILITIES,,
+,Credit Card,0.0
+Total Liabilities,,0.0
+
+EQUITY,,
+Total Equity,,0.0

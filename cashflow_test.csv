@@ -1,0 +1,25 @@
+Type,Date,Account,Amount,Description
+Inflow,2025-10-02,Digital Wallet,414.0,Test Transaction Backend Fix
+Inflow,2025-10-02,Cash,400.0,Test test
+Inflow,2025-10-02,Digital Wallet,500.0,Wallet: Test
+Inflow,2025-10-02,Digital Wallet,123.0,Wallet: test
+Inflow,2025-10-01,Checking Account,100.0,Test transaction
+Inflow,2025-10-01,Checking Account,123.0,test
+Inflow,2025-10-01,Checking Account,2000.0,Salar lunar
+Inflow,2025-10-01,Checking Account,123.0,test123
+Inflow,2025-10-01,Digital Wallet,633.0,Wallet sync - Initial balance transfer from old wallet system
+Inflow,2025-10-01,Digital Wallet,50.0,Wallet: Test deposit via ledger integration
+Inflow,2025-10-01,Digital Wallet,75.0,Wallet: Test deposit via ledger integration (fixed)
+Outflow,2025-10-02,Account None,0.0,Test Transaction
+Outflow,2025-10-02,Account None,0.0,Test Transaction
+Outflow,2025-10-02,Account None,0.0,Test BLABLA
+Outflow,2025-10-02,Account None,0.0,Test BLABLA
+Outflow,2025-10-01,Housing,150.0,Paid Bills
+Outflow,2025-10-01,Food & Dining,123.0,test2
+Outflow,2025-09-30,Food & Dining,100.0,asdasd
+Outflow,2025-09-29,Housing,150.0,Paid bills
+
+Summary,,,,
+Total Inflows,,,4541.0,
+Total Outflows,,,523.0,
+Net Flow,,,4018.0,

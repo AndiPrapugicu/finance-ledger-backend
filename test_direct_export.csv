@@ -1,0 +1,8 @@
+Type,Date,Account,Amount,Description
+Inflow,2025-10-02,Salary,1000.0,Monthly salary
+Outflow,2025-10-02,Housing,500.0,Rent payment
+
+Summary,,,,
+Total Inflows,,,1000.0,
+Total Outflows,,,500.0,
+Net Flow,,,500.0,

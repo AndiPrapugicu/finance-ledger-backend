@@ -1,0 +1,28 @@
+[{
+        "model": "ledger.account",
+        "pk": 1,
+        "fields": {
+            "ledger": 1,
+            "type": "A",
+            "name": "Cash"
+        }
+    },
+    {
+        "model": "ledger.account",
+        "pk": 2,
+        "fields": {
+            "ledger": 1,
+            "type": "A",
+            "name": "Bank"
+        }
+    },
+    {
+        "model": "ledger.account",
+        "pk": 3,
+        "fields": {
+            "ledger": 1,
+            "type": "L",
+            "name": "Credit Card"
+        }
+    }
+]
