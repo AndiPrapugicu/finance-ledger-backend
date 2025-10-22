@@ -1,0 +1,34 @@
+# Ignore environment variables file
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# SQLite/DB
+db.sqlite3
+*.sqlite3
+*.db
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# IDE/Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage
+.coverage
+htmlcov/
+
+# Certificates/Keys
+*.pem
+*.key
+*.crt
+*.cache
