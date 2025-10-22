@@ -1,12 +1,14 @@
 services:
   - type: web
-    name: django-backend
+    name: ledger-backend
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn backend.wsgi:application"
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn backend.wsgi:application
     envVars:
       - key: SECRET_KEY
-        generateValue: true
+        value: django-insecure-emnwpo19i901v2es*d^_c+k^)i*^(+yzs9-!v&pyep^**a^+j_
       - key: DEBUG
         value: false
-    
