@@ -6,7 +6,8 @@ services:
       pip install -r requirements.txt
       python manage.py collectstatic --noinput
       python manage.py migrate
-    startCommand: gunicorn backend.wsgi:application
+  # Ensure migrations run on start (useful if build step didn't run or DB is ephemeral)
+  startCommand: bash -lc "python manage.py migrate --noinput && gunicorn backend.wsgi:application"
     envVars:
       - key: SECRET_KEY
         value: django-insecure-emnwpo19i901v2es*d^_c+k^)i*^(+yzs9-!v&pyep^**a^+j_

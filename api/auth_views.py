@@ -40,8 +40,9 @@ def register_view(request):
         tb = traceback.format_exc()
         print(f"[ERROR register_view] {str(e)}")
         print(tb)
+        # Return message key so frontend error handling surfaces the server message
         return Response({
-            'error': str(e),
+            'message': str(e),
             'traceback': tb
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
