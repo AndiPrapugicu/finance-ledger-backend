@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.pyc
 
 # SQLite/DB
 db.sqlite3
@@ -32,3 +33,5 @@ htmlcov/
 *.key
 *.crt
 *.cache
+
+/staticfiles
